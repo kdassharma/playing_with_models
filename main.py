@@ -14,7 +14,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    openai.api_key = "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"
+    openai.api_key = "API_KEY"
 
     # List available engines and create a dictionary of engine IDs and descriptions -> bug need to fix,
     # why does engines contain object and data? engines = openai.FineTune.list() engine_dict = {} for engine in
