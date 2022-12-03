@@ -1,12 +1,12 @@
 import argparse
 import openai
 import pprint
-
+import os
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--type', help='normal | code', required=True)
-    parser.add_argument('-i', '--input', help='Input file')
+    parser.add_argument('-i', '--input', help='Input file or text')
 
     parser.add_argument('-o', '--output', help='Output file')
     return parser.parse_args()
@@ -14,7 +14,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    openai.api_key = "API_KEY"
+    openai.api_key = "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"
 
     # List available engines and create a dictionary of engine IDs and descriptions -> bug need to fix,
     # why does engines contain object and data? engines = openai.FineTune.list() engine_dict = {} for engine in
@@ -31,8 +31,11 @@ def main():
     if args.type == "normal":
         # If the user provided "normal" as the type, use the prompt as-is
         # Open the file and read its contents
-        with open(args.input, "r") as file:
-            prompt = file.read()
+        if os.path.exists(args.input):
+            with open(args.input, "r") as file:
+                prompt = file.read()
+        else:
+            prompt = args.input
     elif args.type == "code":
         # If the user provided "code" as the type, add a prefix to the prompt
         with open(args.input, "r") as file:
