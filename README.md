@@ -1,3 +1,15 @@
+Building a CLI to prompt GPT-3 for text queries via CLI string or input file. Code option is available, just provide the file path with the correct type option.
+
+```
+alias gpt3="/Users/dashkaus/Documents/Projects/GPT3_CLI/venv/bin/python /Users/dashkaus/Documents/Projects/GPT3_CLI/main.py"
+```
+
+Need to investigate:
+* How different prompts lead to different results?
+* What the effect of long term and short term queries are?
+* What are useful, easy to build applications?
+  * A module that goes through code in a package and gives an overview of what each class does.
+---
 ![Screen Shot 2022-12-03 at 2 09 23 AM](https://user-images.githubusercontent.com/42706537/205435651-817441f3-1f78-4f1f-9d52-05b7aa60a6fa.png)
 ---
 ![Screen Shot 2022-12-03 at 2 09 51 AM](https://user-images.githubusercontent.com/42706537/205435671-c8d6da9e-3265-4f4d-9ef0-94ac28b9023b.png)
